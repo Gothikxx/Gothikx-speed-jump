@@ -1,4 +1,4 @@
--- GOTHIKXX ULTRA 2025 - VERSIÓN FINAL 100% FUNCIONAL
+-- GOTHIKXX ULTRA 2025 -
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -6,7 +6,6 @@ local player = Players.LocalPlayer
 local pgui = player:WaitForChild("PlayerGui")
 local cam = workspace.CurrentCamera
 
--- Variables
 local flying = false
 local flySpeed = 100
 local flingAura = false
@@ -16,7 +15,6 @@ local walkSpeed = 50
 local jumpOn = false
 local jumpPower = 100
 
--- GUI
 local sg = Instance.new("ScreenGui")
 sg.Name = "GothikXX_Ultra"
 sg.ResetOnSpawn = false
@@ -37,7 +35,6 @@ local stroke = Instance.new("UIStroke", main)
 stroke.Color = Color3.fromRGB(180,60,255)
 stroke.Thickness = 5
 
--- Título (drag zone)
 local title = Instance.new("TextLabel", main)
 title.Size = UDim2.new(1,0,0,140)
 title.BackgroundTransparency = 1
@@ -47,7 +44,6 @@ title.Font = Enum.Font.GothamBlack
 title.TextSize = 54
 title.TextStrokeTransparency = 0.6
 
--- DRAG PERFECTO
 local dragging = false
 local dragStart, startPos
 
@@ -76,7 +72,6 @@ UserInputService.InputChanged:Connect(function(inp)
     end
 end)
 
--- Minimizar
 local minBtn = Instance.new("TextButton", main)
 minBtn.Size = UDim2.new(0,60,0,60)
 minBtn.Position = UDim2.new(1,-75,0,15)
@@ -110,7 +105,7 @@ end)
 local yPos = 160
 
 local function addSection(name, btnText, offCol, onCol, sliderName, minV, maxV, defV, slideCB, toggleCB)
-    -- Título sección
+
     local lbl = Instance.new("TextLabel", main)
     lbl.Size = UDim2.new(0.9,0,0,60)
     lbl.Position = UDim2.new(0.05,0,0,yPos)
@@ -121,7 +116,6 @@ local function addSection(name, btnText, offCol, onCol, sliderName, minV, maxV, 
     lbl.TextSize = 34
     yPos = yPos + 80
 
-    -- Botón toggle
     local btn = Instance.new("TextButton", main)
     btn.Size = UDim2.new(0.9,0,0,100)
     btn.Position = UDim2.new(0.05,0,0,yPos)
@@ -141,7 +135,6 @@ local function addSection(name, btnText, offCol, onCol, sliderName, minV, maxV, 
     end)
     yPos = yPos + 120
 
-    -- Slider
     local container = Instance.new("Frame", main)
     container.Size = UDim2.new(0.9,0,0,130)
     container.Position = UDim2.new(0.05,0,0,yPos)
@@ -207,7 +200,6 @@ local function addSection(name, btnText, offCol, onCol, sliderName, minV, maxV, 
     main.CanvasSize = UDim2.new(0,0,0,yPos + 100)
 end
 
--- SECCIONES REALES
 addSection("FLY HACK", "FLY", Color3.fromRGB(230,50,80), Color3.fromRGB(0,240,0), "Fly Speed", 20, 800, 100,
     function(v) flySpeed = v end,
     function(on)
@@ -290,4 +282,4 @@ addSection("JUMP POWER", "JUMP", Color3.fromRGB(255,80,80), Color3.fromRGB(0,240
         end
     end)
 
-print("GOTHIKXX ULTRA 2025 CARGADO AL 100% - TODO FUNCIONA PERFECTO")
+print("GOTHIKXX ULTRA 2025")
